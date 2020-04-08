@@ -1,0 +1,8 @@
+id;nombre;apellido;latitud;longitud;recolector;hora_recojo;conductor
+01;Tamara;Lopez;-12.0604755;-76.9434953;01;06:15:00;01
+02;Victor;Barrera;-12.0680735;-76.9404941;01;06:20:00;02
+05;Zumiko;Elera;-12.1050597;-76.9492430;01;07:00:00;03
+04;Jackeline;Donayre;-12.0976935;-76.9470597;01;06:38:00;02
+07;Yvonne;Flores;-12.1004445;-76.9433076;01;07:30:00;04
+06;Cindy;Perez;-12.1021818;-76.9378875;01;07:28:00;04
+03;Ana Paula;Casas;-12.1038685;-76.9403670;01;06:35:00;02
