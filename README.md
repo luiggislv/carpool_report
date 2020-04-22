@@ -15,3 +15,6 @@ En la carpeta "carpool_report":
 
 Para ejecutar el reporte:
 - py test.py
+
+Para descargar cambios:
+- git pull origin master
