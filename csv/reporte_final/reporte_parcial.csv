@@ -1,0 +1,12 @@
+Conductor asignado;flag;Persona;Hora Recojo;Direccion;Tiempo estimado
+01;pasajero;Tamara Lopez;06:15:00;Calle Miguel de Cervantes Saavedra 130, Cercado de Lima 15012, Peru;6.1 km;14 mins
+02;pasajero;Victor Barrera;06:20:00;Calle Montevideo 182, La Molina 15026, Peru;5.1 km;10 mins
+02;pasajero;Ana Paula Casas;06:35:00;Jirón Puerto Pizarro 419, La Molina 15024, Peru;0.7 km;2 mins
+02;pasajero;Jackeline Donayre;06:38:00;Alameda de la Paz 238, La Molina 15024, Peru;0.7 km;1 min
+03;pasajero;Zumiko Elera;07:00:00;Alameda de los Cóndores 205, La Molina 15024, Peru;0.9 km;3 mins
+04;pasajero;Cindy Perez;07:28:00;Lomas de la Molina Vieja 588, Cercado de Lima 15024, Peru;0.8 km;2 mins
+04;pasajero;Yvonne Flores;07:30:00;Av. los Fresnos 1003, La Molina 15024, Peru;1 m;1 min
+cx;conductor;Saul Perez;06:25:00;Av. Flora Tristan 447, La Molina 15024, Peru;6.2 km;14 mins
+cx;conductor;Cesar Rojas;06:40:00;Alameda del Corregidor 1535, La Molina 15024, Peru;1.2 km;2 mins
+cx;conductor;John Cieza;07:10:00;Av. la Fontana 375, La Molina 15023, Peru;4.4 km;9 mins
+cx;conductor;Jackeline Orue;07:30:00;Av. los Fresnos 1003, La Molina 15024, Peru;1 m;1 min

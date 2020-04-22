@@ -6,10 +6,7 @@ import requests
 import json
 from datetime import datetime
 
-
-#API google Matrix
-API_key = 'AIzaSyDJQZgcTpQWmM9zwUn5RDIvrbm73opKpoU'
-url = "https://maps.googleapis.com/maps/api/distancematrix/json"
+gmaps = googlemaps.Client(key='AIzaSyDJQZgcTpQWmM9zwUn5RDIvrbm73opKpoU')
 
 #Cabecera
 header = []
@@ -62,20 +59,39 @@ with open("csv\\archivos\\conductores.csv", "r") as csv_file_cx:
        cx_lst = sorted(csv_reader_cx, key = lambda lines: datetime.strptime(lines[6], "%H:%M:%S"), reverse=False)
 
 # creacion de reporte_final
-reporte_final = open('csv/reporte_final/reporte_final.csv', 'w', newline='')
-csv_writer = csv.writer(reporte_final, delimiter=';', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
+reporte_parcial = open('csv/reporte_final/reporte_parcial.csv', 'w', newline='')
+csv_writer = csv.writer(reporte_parcial, delimiter=';', quotechar='|', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
 count = 0
+
+origin_ini = rx_lat_ini +","+rx_long_ini
 
 for i in px_lst:
     if count == 0:
         header = header
         csv_writer.writerow(header)
         count += 1
-    pasajeros = [i[7],'pasajero', i[1]+" "+i[2], i[6], i[3]+","+i[4], ' ']
+
+
+    dest_ini_px = i[3]+","+i[4]
+    my_dist_px = gmaps.distance_matrix(origin_ini, dest_ini_px)
+
+    destination = my_dist_px['destination_addresses'][0]
+    distance = my_dist_px['rows'][0]['elements'][0]['distance']['text']
+    duration = my_dist_px['rows'][0]['elements'][0]['duration']['text']
+
+    pasajeros = [i[7],'pasajero', i[1]+" "+i[2], i[6], destination, distance, duration]
     csv_writer.writerow(pasajeros)
 
 for i in cx_lst:
-    conductores = ['--', 'conductor', i[1]+" "+i[2], i[6], i[3]+","+i[4], ' ']
+
+    dest_ini_cx = i[3]+","+i[4]
+    my_dist_cx = gmaps.distance_matrix(origin_ini, dest_ini_cx)
+
+    destination = my_dist_cx['destination_addresses'][0]
+    distance = my_dist_cx['rows'][0]['elements'][0]['distance']['text']
+    duration = my_dist_cx['rows'][0]['elements'][0]['duration']['text']
+
+    conductores = ['cx', 'conductor', i[1]+" "+i[2], i[6], destination, distance, duration]
     csv_writer.writerow(conductores)
 
-reporte_final.close()
+reporte_parcial.close()
